@@ -1,4 +1,8 @@
 [workspace]
 
-members  = [ "packages/*" ]
+members  = ["packages/*"]
 resolver = "2"
+
+[patch.'https://github.com/permissionlessweb/neutron-test-tube']
+neutron-test-tube = { path = "packages/neutron-test-tube" }
+test-tube-ntrn = { path = "packages/test-tube" }

@@ -7,14 +7,14 @@ repository  = "https://github.com/margined-protocol/test-tube"
 version     = "5.1.3"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-exclude = [ "neutron", "test_artifacts" ]
+exclude = ["neutron", "test_artifacts"]
 
 [dependencies]
 base64               = { version = "0.21.5" }
-cosmrs = { git = "https://github.com/permissionlessweb/cosmos-rust", branch = "zk-mvp" }
-cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp", features = ["cosmwasm_2_0", "stargate"] }
+cosmrs = { path = "../../../cosmos-rust/cosmrs" }
+cosmwasm-std = { path = "../../../cosmwasm/packages/std", features = ["cosmwasm_2_0", "stargate"] }
 hex                  = { version = "0.4.2" }
-neutron-std = { git = "https://github.com/permissionlessweb/neutron-std", branch = "zk-mvp" }
+neutron-std = { path = "../../../neutron-std/packages/neutron-std" }
 prost                = { version = "0.14", features = [ "derive" ] }
 serde                = { version = "1.0.144" }
 serde_json           = { version = "1.0.85" }
@@ -24,6 +24,6 @@ thiserror            = { version = "1.0.34" }
 bindgen = "0.60.1"
 
 [dev-dependencies]
-cw1-subkeys = { git = "https://github.com/permissionlessweb/cw-plus", branch = "zk-mvp", features = ["library"] }
-cw1-whitelist = { git = "https://github.com/permissionlessweb/cw-plus", branch = "zk-mvp" }
+cw1-subkeys = { path = "../../../cw-plus/contracts/cw1-subkeys", features = ["library"] }
+cw1-whitelist = { path = "../../../cw-plus/contracts/cw1-whitelist" }
 rayon         = { version = "1.5.3" }

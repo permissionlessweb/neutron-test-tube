@@ -10,14 +10,14 @@ version     = "0.1.1"
 
 [dependencies]
 base64           = "0.21.5"
-cosmrs = { git = "https://github.com/permissionlessweb/cosmos-rust", branch = "zk-mvp" }
-cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp", features = ["cosmwasm_1_2", "cosmwasm_1_3", "cosmwasm_1_4", "iterator", "stargate"] }
-tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "zk-mvp" }
+cosmrs = { path = "../../../cosmos-rust/cosmrs" }
+cosmwasm-std = { path = "../../../cosmwasm/packages/std", features = ["cosmwasm_1_2", "cosmwasm_1_3", "cosmwasm_1_4", "iterator", "stargate"] }
 prost                = { version = "0.14", features = [ "derive" ] }
 serde                = { version = "1.0.144" }
 serde_json           = { version = "1.0.85" }
+tendermint-proto = { path = "../../../tendermint-rs/proto" }
 thiserror            = { version = "1.0.34" }
 
 [dev-dependencies]
-cw1-whitelist = { git = "https://github.com/permissionlessweb/cw-plus", branch = "zk-mvp" }
+cw1-whitelist = { path = "../../../cw-plus/contracts/cw1-whitelist" }
 rayon         = { version = "1.5.3" }
